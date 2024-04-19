@@ -7,12 +7,12 @@ Tem como objetivo criar uma API com dados de uma livraria contendo 3 rotas - liv
 * Buscar um único único livro, autor ou editora pelo seu ID cadastrado.
 * Atualizar um único livro, autor ou editora.
 * Deletar um único único livro, autor ou editora.
-### Installation Guide
+### Instalação
 * Clone esse repositório [aqui](https://github.com/ygrillo/javascript.git).
 * A branch master é a branch mais estável, trabalhe dela.
 * Execute `npm install` para instalar todas as dependências.
 * Crie sua própria coleção no MongoDB Atlas, é gratuito.
-* Crie um arquivo `.env` na raiz do seu projeto e insira sua variáveis. Veja `.env.example` para consulta.
+* Crie um arquivo `.env` na raiz do seu projeto e insira suas variáveis. Veja `.env.example` para consulta.
 ### Uso
 * Execute `npm run dev` para iniciar a aplicação.
 * Conecte-se à API usando Postman (caso não esteja usando WSL) ou Thunder Client (instalado no VS Code) na porta 3000.
