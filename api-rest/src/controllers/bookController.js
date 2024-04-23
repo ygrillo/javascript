@@ -74,6 +74,18 @@ class BookController {
             });
         }
     }
+
+    static async listBooksByPublisher(req, res) {
+        const publisher = req.query.editora;
+        try {
+            const booksByPublisher = await book.find({ editora: publisher });
+            res.status(200).json(booksByPublisher);
+        } catch (error) {
+            res.status(500).json({
+                message: `${error.message} - falha na busca.`,
+            });
+        }
+    }
 }
 
 export default BookController;
