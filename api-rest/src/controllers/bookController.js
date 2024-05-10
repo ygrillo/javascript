@@ -76,9 +76,20 @@ class BookController {
     }
 
     static async listBooksByPublisher(req, res) {
-        const publisher = req.query.editora;
+        const publisherName = req.query.editora;
         try {
-            const booksByPublisher = await book.find({ editora: publisher });
+            const publisherToBeFound = await publisher.findOne({
+                nome: publisherName,
+            });
+
+            if (!publisherToBeFound) {
+                return res
+                    .status(404)
+                    .json({ message: "Editora não encontrada." });
+            }
+            const booksByPublisher = await book
+                .find({ editora: publisherToBeFound })
+                .populate("editora");
             res.status(200).json(booksByPublisher);
         } catch (error) {
             res.status(500).json({
