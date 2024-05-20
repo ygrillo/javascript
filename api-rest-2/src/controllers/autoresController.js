@@ -9,12 +9,11 @@ class AutorController {
       res.status(200).json(autoresResultado);
       
   } catch (erro) {
-          res.status(500).json({ message: "Erro interno no servidor" }, erro.message);
+    res.status(500).json({ message: "Erro interno no servidor" }, erro.message);
   }
   };
 
   static listarAutorPorId = async (req, res) => {
-    
       try {
         const id = req.params.id;
   
@@ -25,7 +24,6 @@ class AutorController {
         res.status(400).send({message: `${erro.message} - Id do Autor não localizado.`});
       }
     };
-  
   
     static cadastrarAutor = async (req, res) => {
       try {
@@ -39,7 +37,6 @@ class AutorController {
       }
     };
   
-
     static atualizarAutor = async (req, res) => {
       try {
         const id = req.params.id;

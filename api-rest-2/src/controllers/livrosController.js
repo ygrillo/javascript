@@ -19,7 +19,7 @@ class LivroController {
       const id = req.params.id;
 
       const livroResultados = await livros.findById(id)
-        .populate("autor", "nome")
+        .populate("autor", [ "nome", "nacionalidade" ])
         .exec();
 
       res.status(200).send(livroResultados);
