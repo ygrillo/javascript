@@ -1,4 +1,4 @@
-# Projeto Alura - API NodeJs com Express
+# Projeto Alura - API Node.js com Express
 
 ## Objetivo
 
@@ -31,7 +31,9 @@ O projeto conta com várias validações de erros:
 
 ## Como preparar o ambiente
 
+1. Tenha o NVM instalado. Se não tiver instalado, siga as instruções em [Instalar NVM](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating);
 1. Abra um terminal dentro da pasta do projeto;
+1. Instale o Node.js versão 20.13.1 ou superior com NPM versão 10.5.2 ou superior com NVM `nvm install 20` e `nvm use 20`;
 1. Execute o comando `npm i` ou `npm install` para instalar todas as dependências;
 1. Configure o arquivo `.env` na raiz do projeto seguindo o exemplo do arquivo `.env.example`;
 1. Instale a extensão Thunder Client no VS Code;
@@ -59,6 +61,18 @@ O projeto conta com várias validações de erros:
    ```
 
 ## Parâmetros de consulta
+
+Parâmetros aplicados somente à rota `/livros/busca`.
+
+1. **editora**: Busca o livro pelo nome da editora;
+1. **titulo**: Busca o livro pelo seu título;
+1. **minNumPaginas**: Busca o livro com um número mínimo de páginas;
+1. **maxNumPaginas**: Busca o livro com um número máximo de páginas;
+1. **nomeAutor**: Busca o livro pelo nome do autor.
+
+Exemplo: `http://localhost:3000/livros/busca?editora=Rocco&titulo=Harry&minNumPaginas=250&maxNumPaginas=300&nomeAutor=Rowling`
+
+## Parâmetros de paginação
 
 Parâmetros especiais que podem ser usados para consultar tanto livros como autores. Exemplo:
 
