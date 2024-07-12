@@ -1,14 +1,15 @@
-import express from "express"
-import AutorController from "../controllers/autoresController.js"
-import paginar from "../middlewares/paginar.js"
+import express from 'express'
+import AutorController from '../controllers/autoresController.js'
+import autorizacao from '../middlewares/autorizacao.js'
+import paginar from '../middlewares/paginar.js'
 
 const router = express.Router()
 
 router
-  .get("/autores", AutorController.listarAutores, paginar)
-  .get("/autores/:id", AutorController.listarAutorPorId)
-  .post("/autores", AutorController.cadastrarAutor)
-  .put("/autores/:id", AutorController.atualizarAutor)
-  .delete("/autores/:id", AutorController.excluirAutor)
+  .get('/autores', autorizacao, AutorController.listarAutores, paginar)
+  .get('/autores/:id', autorizacao, AutorController.listarAutorPorId)
+  .post('/autores', autorizacao, AutorController.cadastrarAutor)
+  .put('/autores/:id', autorizacao, AutorController.atualizarAutor)
+  .delete('/autores/:id', autorizacao, AutorController.excluirAutor)
 
-export default router   
+export default router
