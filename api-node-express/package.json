@@ -1,6 +1,6 @@
 {
   "name": "api-node-express",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "API que simula as funções de uma livraria com busca, filtro e cadastro de autores e livros.",
   "main": "index.js",
   "type": "module",
@@ -12,11 +12,6 @@
   "keywords": [],
   "author": "Yuri Grillo",
   "license": "ISC",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npx lint-staged"
-    }
-  },
   "prettier": {
     "semi": false,
     "overrides": [
@@ -40,7 +35,6 @@
     "@eslint/js": "^9.6.0",
     "eslint": "^9.6.0",
     "globals": "^15.8.0",
-    "lint-staged": "^15.2.7",
     "nodemon": "^2.0.15",
     "prettier": "^3.3.2"
   },
