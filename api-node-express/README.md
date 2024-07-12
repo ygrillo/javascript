@@ -17,6 +17,8 @@ O projeto conta com várias validações de erros:
 
 | Método |     Rota      | Descrição                                          |
 | :----: | :-----------: | :------------------------------------------------- |
+|  POST  |  /cadastrar   | Cadastra novo email e nova senha                   |
+|  POST  |  /autenticar  | Autentica email e senha para obter o JWT           |
 |  GET   |    /livros    | Lista todos os livros                              |
 |  GET   | /livros/busca | Lista todos os livros baseado em alguns parâmetros |
 |  GET   |  /livros/:id  | Mostra somente um livro baseado em seu id          |
@@ -42,6 +44,15 @@ O projeto conta com várias validações de erros:
 
 1. Execute o comando `npm run dev` e aguarde mostrar a mensagem de banco conectado;
 1. Utilize a URL `http://localhost:3000` para fazer as consultas;
+1. Antes de testar as rotas, faça um cadastro de email e senha com `http://localhost:3000/cadastrar` usando o método **POST**. Envio o objeto no `body`:
+   ```json
+   {
+     "email": "<email>",
+     "senha": "<senha>"
+   }
+   ```
+1. Autentique suas credenciais para receber um token JWT usando o objeto anterior com `http://localhost:3000/autenticar` usando o método **POST**;
+1. Sempre que for qualquer requisição, utilize o campo **Authorization** em **Headers** para colocar JWT <**token**>;
 1. Faça um teste com `http://localhost:3000/autores` usando o método **POST** e insira o objeto abaixo dentro de `body`:
    ```json
    {
@@ -49,7 +60,7 @@ O projeto conta com várias validações de erros:
      "nacionalidade": "Inglaterra"
    }
    ```
-1. Liste todos os autores usando a mesma URL da etapa anterior mas com o método **GET**
+1. Liste todos os autores usando a mesma URL da etapa anterior mas com o método **GET**;
 1. Cadastre um novo livro com a URL `http://localhost:3000/livros` usando o método **POST** e insira o objeto abaixo dentro de `body`. Utilize o `_id` do autor da etapa anterior para preencher o campo `autor`:
    ```json
    {
